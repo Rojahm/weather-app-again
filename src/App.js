@@ -1,17 +1,18 @@
 import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import TodayInfo from "./components/TodayInfo";
 
 function App() {
   const [city, setCity] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const handleQuery = (e) => {
     setCity(e.target.value);
   };
   const handleSearch = (e) => {
     e.preventDefault();
-    return <p>{city}</p>;
+    setIsLoading(true);
   };
   const handleCurrentLocation = (e) => {
     console.log(city);
@@ -25,7 +26,7 @@ function App() {
           handleSearch={handleSearch}
           handleCurrentLocation={handleCurrentLocation}
         />
-        <TodayInfo city={city} />
+        <TodayInfo isLoading={isLoading} city={city} />
         <hr />
         {/* forecast */}
       </div>
