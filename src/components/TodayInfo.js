@@ -1,3 +1,5 @@
+import PulseLoader from "react-spinners/PulseLoader";
+
 const TodayInfo = ({
   city,
   isLoading,
@@ -11,6 +13,7 @@ const TodayInfo = ({
     return (
       <div>
         <p>Searching for {city}</p>
+        <PulseLoader color="#36d7b7" />
       </div>
     );
   }
