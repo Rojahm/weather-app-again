@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Search from "./components/Search";
 import TodayInfo from "./components/TodayInfo";
