@@ -25,6 +25,7 @@ function App() {
           handleCurrentLocation={handleCurrentLocation}
         />
         <TodayInfo city={city} />
+        <hr />
         {/* forecast */}
       </div>
     </div>
