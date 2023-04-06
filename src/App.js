@@ -31,6 +31,7 @@ function App() {
         />
         <TodayInfo isLoading={isLoading} city={city} />
         <hr />
+
         {/* forecast */}
       </div>
     </div>
