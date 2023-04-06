@@ -7,9 +7,16 @@ const TodayInfo = ({ city, isLoading, isLoaded, weatherData }) => {
     );
   } else if (isLoaded) {
     return (
-      <div>
-        <span>weather in {weatherData.city}</span>
-        <span>{weatherData.temperature.current}</span>
+      <div className="TodayInfo d-flex justify-content-center">
+        <div>
+          <span>weather in {weatherData.city}</span>
+        </div>
+        <div>
+          <span>{weatherData.temperature.current}</span>
+        </div>
+        <div>
+          <img src={weatherData.condition.icon_url} alt="icon" />
+        </div>
       </div>
     );
   }
