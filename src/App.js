@@ -4,6 +4,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import TodayInfo from "./components/TodayInfo";
+import Forecast from "./components/Forecast";
 
 function App() {
   const [city, setCity] = useState("");
@@ -11,6 +12,10 @@ function App() {
   const [weatherData, setWeatherData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
   const [unit, setUnit] = useState("metric");
+  const [forecastData, setForecastData] = useState({});
+  const [isForecastLoading, setIsForecastLoading] = useState(false);
+  const [isForecastLoaded, setIsForecastLoaded] = useState(false);
+
   // get data from api and setWeatherData state object
   const getData = (city) => {
     const apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
@@ -30,7 +35,9 @@ function App() {
   const handleSearch = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setIsForecastLoading(true);
     getData(city);
+    getForecast(city);
   };
   // handle current location coordinates
   const handleCurrentLocation = (e) => {
@@ -39,6 +46,17 @@ function App() {
   // handle unit conversion
   const handleUnit = (unit) =>
     unit === "metric" ? setUnit("fahrenheit") : setUnit("metric");
+  // get forecast
+  const getForecast = (city) => {
+    const apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    axios.get(apiUrl).then((Response) => {
+      setForecastData(Response.data);
+      setIsForecastLoading(false);
+      setIsForecastLoaded(true);
+      console.log(forecastData);
+    });
+  };
   return (
     <div className="App">
       <header className="App-header"></header>
@@ -57,8 +75,11 @@ function App() {
           handleUnit={handleUnit}
         />
         <hr />
-
-        {/* forecast */}
+        <Forecast
+          unit={unit}
+          isForecastLoading={isForecastLoading}
+          isForecastLoaded={isForecastLoaded}
+        />
       </div>
     </div>
   );
