@@ -9,12 +9,16 @@ function App() {
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [weatherData, setWeatherData] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
   // get data from api and setWeatherData state object
   const getData = (city) => {
     const apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then((Response) => {
       setWeatherData(Response.data);
+      setIsLoading(false);
+      setIsLoaded(true);
+      console.log(weatherData);
     });
   };
   // handle input text and setCity
@@ -42,6 +46,7 @@ function App() {
         />
         <TodayInfo
           isLoading={isLoading}
+          isLoaded={isLoaded}
           city={city}
           weatherData={weatherData}
         />

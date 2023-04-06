@@ -1,14 +1,15 @@
-const TodayInfo = ({ city, isLoading, weatherData }) => {
+const TodayInfo = ({ city, isLoading, isLoaded, weatherData }) => {
   if (isLoading) {
     return (
       <div>
         <p>Searching for {city}</p>
       </div>
     );
-  } else {
+  } else if (isLoaded) {
     return (
       <div>
-        <p> recieved</p>
+        <span>weather in {weatherData.city}</span>
+        <span>{weatherData.temperature.current}</span>
       </div>
     );
   }
