@@ -1,4 +1,5 @@
 import PulseLoader from "react-spinners/PulseLoader";
+import Time from "./Time";
 
 const TodayInfo = ({
   city,
@@ -23,6 +24,9 @@ const TodayInfo = ({
       <div className="TodayInfo d-flex justify-content-evenly">
         <div className="align-self-center">
           <span>{weatherData.city}</span>
+          <span>
+            <Time timeStamp={weatherData.time} />
+          </span>
         </div>
         <div className="align-self-center">
           <span>

@@ -1,7 +1,13 @@
 import PulseLoader from "react-spinners/PulseLoader";
 
-const Forecast = ({ unit, isForecastLoading, isForecastLoded }) => {
-  if (isForecastLoading) {
+const Forecast = ({
+  unit,
+  isForecastLoading,
+  isForecastLoded,
+  isLoading,
+  forecastData,
+}) => {
+  if (isForecastLoading && !isLoading) {
     return (
       <div>
         <p>Loadin from forecast</p>

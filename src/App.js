@@ -77,8 +77,10 @@ function App() {
         <hr />
         <Forecast
           unit={unit}
+          isLoading={isLoading}
           isForecastLoading={isForecastLoading}
           isForecastLoaded={isForecastLoaded}
+          forecastData={forecastData}
         />
       </div>
     </div>
