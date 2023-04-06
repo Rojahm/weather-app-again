@@ -10,6 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [weatherData, setWeatherData] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const [unit, setUnit] = useState("metric");
   // get data from api and setWeatherData state object
   const getData = (city) => {
     const apiKey = "a7c7f51a8a5abc24e0tb69o4ff6018a3";
@@ -35,6 +36,9 @@ function App() {
   const handleCurrentLocation = (e) => {
     console.log(city);
   };
+  // handle unit conversion
+  const handleUnit = (unit) =>
+    unit === "metric" ? setUnit("fahrenheit") : setUnit("metric");
   return (
     <div className="App">
       <header className="App-header"></header>
@@ -48,7 +52,9 @@ function App() {
           isLoading={isLoading}
           isLoaded={isLoaded}
           city={city}
+          unit={unit}
           weatherData={weatherData}
+          handleUnit={handleUnit}
         />
         <hr />
 
