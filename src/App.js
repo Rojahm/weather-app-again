@@ -7,13 +7,16 @@ import TodayInfo from "./components/TodayInfo";
 function App() {
   const [city, setCity] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  // handle input text and setCity
   const handleQuery = (e) => {
     setCity(e.target.value);
   };
+  // handle form submit event and set isLoadin to true
   const handleSearch = (e) => {
     e.preventDefault();
     setIsLoading(true);
   };
+  // handle current location coordinates
   const handleCurrentLocation = (e) => {
     console.log(city);
   };
