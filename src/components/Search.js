@@ -11,7 +11,7 @@ const Search = ({ handleQuery, handleSearch, handleCurrentLocation }) => {
         />
         <span className="btn" onClick={handleCurrentLocation}>
           <FaSearchLocation
-            style={{ color: "blue", cursor: "pointer", fontSize: "25px" }}
+            style={{ color: "#0B5ED7", cursor: "pointer", fontSize: "25px" }}
           />
         </span>
         <input type="submit" value="Search" className="btn btn-primary" />
