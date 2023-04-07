@@ -17,7 +17,7 @@ const Forecast = ({
     );
   } else if (isForecastLoaded) {
     return (
-      <div className="d-flex justify-content-evenly">
+      <div className="d-flex justify-content-evenly pb-4">
         {forecastData.daily.map(
           (day, i) =>
             i < 6 &&
