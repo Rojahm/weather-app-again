@@ -25,7 +25,7 @@ const TodayInfo = ({
         <div className="align-self-center">
           <span>{weatherData.city}</span>
           <span>
-            <Time timeStamp={weatherData.time} />
+            <Time timeStamp={weatherData.time} time={true} />
           </span>
         </div>
         <div className="align-self-center">

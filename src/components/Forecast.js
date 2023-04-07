@@ -1,9 +1,10 @@
 import PulseLoader from "react-spinners/PulseLoader";
+import ForecastDay from "./ForecastDay";
 
 const Forecast = ({
   unit,
   isForecastLoading,
-  isForecastLoded,
+  isForecastLoaded,
   isLoading,
   forecastData,
 }) => {
@@ -14,10 +15,16 @@ const Forecast = ({
         <PulseLoader color="#36d7b7" />
       </div>
     );
-  } else if (isForecastLoded) {
+  } else if (isForecastLoaded) {
     return (
-      <div>
-        <p>forecast loaded</p>
+      <div className="d-flex justify-content-evenly">
+        {forecastData.daily.map((day) => (
+          <ForecastDay
+            key={Math.floor(Math.random() * 10000) + 1}
+            day={day}
+            unit={unit}
+          />
+        ))}
       </div>
     );
   }
