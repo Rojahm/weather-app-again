@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import TodayInfo from "./components/TodayInfo";
@@ -58,7 +57,7 @@ function App() {
     });
   };
   return (
-    <div className="App">
+    <div className="App border rounded shadow-sm p-5 m-5 text-center">
       <header className="App-header"></header>
       <div>
         <Search
