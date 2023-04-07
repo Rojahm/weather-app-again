@@ -65,7 +65,7 @@ function App() {
   }
   return (
     <div className="App m-5 text-center">
-      <div className="content border rounded shadow-sm p-4">
+      <div className="content rounded shadow-sm p-4">
         <Search
           handleQuery={handleQuery}
           handleSearch={handleSearch}
