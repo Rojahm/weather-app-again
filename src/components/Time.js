@@ -7,13 +7,12 @@ const Time = ({ timeStamp }) => {
   let min = date.getMinutes();
   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
-  console.log(day);
   return (
     <>
       <div>{day}</div>
       {hour && (
         <div>
-          {hour < 10 ? `0${hour}` : { hour }}:{min < 10 ? `0${min}` : { min }}
+          {hour < 10 ? `0${hour}` : hour}:{min < 10 ? `0${min}` : min}
         </div>
       )}
     </>
