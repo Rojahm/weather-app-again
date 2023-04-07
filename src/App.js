@@ -90,9 +90,8 @@ function App() {
       </div>
       <div className="footer">
         coded by <a href="https://cool-starship-bcbb97.netlify.app/">Ro?a </a>-{" "}
-        <a href="https://github.com/Rojahm/weather-app-again">
-          open-source on Github
-        </a>
+        <a href="https://github.com/Rojahm/weather-app-again">open-source </a>
+        on Github
       </div>
     </div>
   );
