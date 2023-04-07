@@ -5,7 +5,11 @@ const ForecastDay = ({ day, unit }) => {
   return (
     <div>
       <Time timeStamp={day.time} time={false} />
-      <Icon />
+      <Icon
+        icon={day.condition.icon}
+        alt={day.condition.description}
+        width={"63px"}
+      />
       <span>
         {unit === "metric"
           ? Math.round(day.temperature.maximum)
