@@ -1,8 +1,19 @@
+.App .content {
+  background-color: rgba(255, 255, 255, 0.7);
+}
 .App .footer,
 a {
   font-size: 10px;
   font-weight: 500;
+  color: aliceblue;
+  opacity: 0.8;
 }
 .App .footer a {
   text-decoration: none;
+  color: rgb(127, 194, 252);
+}
+@media (min-width: 800px) {
+  .App {
+    max-width: 50vw;
+  }
 }
