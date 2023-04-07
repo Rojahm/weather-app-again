@@ -1,6 +1,7 @@
 import PulseLoader from "react-spinners/PulseLoader";
 import Time from "./Time";
 import Icon from "./Icon";
+import "./TodayInfo.css";
 
 const TodayInfo = ({
   city,
@@ -23,23 +24,23 @@ const TodayInfo = ({
   else if (isLoaded) {
     return (
       <div className="TodayInfo d-flex justify-content-evenly">
-        <div className="align-self-center">
-          <span>{weatherData.city}</span>
-          <span>
+        <div className="align-self-center py-3">
+          <span className="city">{weatherData.city}</span>
+          <span className="date">
             <Time timeStamp={weatherData.time} time={true} />
           </span>
         </div>
         <div className="align-self-center">
-          <span>
+          <span className="temp">
             {unit === "metric"
               ? Math.round(weatherData.temperature.current)
               : Math.round((weatherData.temperature.current * 9) / 5 + 32)}
-
-            <button className="btn" onClick={() => handleUnit(unit)}>
-              {/* dynamic unit */}
-              {unit === "metric" ? "C" : "F"}
-            </button>
+            °
           </span>
+          <button className="unit" onClick={() => handleUnit(unit)}>
+            {/* dynamic unit */}
+            {unit === "metric" ? "C" : "F"}
+          </button>
         </div>
         <div className="align-self-center">
           <Icon
