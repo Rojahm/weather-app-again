@@ -24,7 +24,7 @@ const TodayInfo = ({
   else if (isLoaded) {
     return (
       <div className="TodayInfo d-flex justify-content-evenly">
-        <div className="align-self-center py-3">
+        <div className="align-self-center pt-3">
           <span className="city">{weatherData.city}</span>
           <span className="date">
             <Time timeStamp={weatherData.time} time={true} />
