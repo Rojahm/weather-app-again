@@ -63,7 +63,7 @@ function App() {
     getForecast("berlin");
   }
   return (
-    <div className="App border rounded shadow-sm p-5 m-5 text-center">
+    <div className="App border rounded shadow-sm p-3 px-4 pb-5 m-5 text-center">
       <header className="App-header"></header>
       <div>
         <Search
