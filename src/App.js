@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Search from "./components/Search";
 import TodayInfo from "./components/TodayInfo";
 import Forecast from "./components/Forecast";
+import "./App.css";
 
 function App() {
   const [city, setCity] = useState("");
@@ -63,9 +64,8 @@ function App() {
     getForecast("berlin");
   }
   return (
-    <div className="App border rounded shadow-sm p-3 px-4 pb-5 m-5 text-center">
-      <header className="App-header"></header>
-      <div>
+    <div className="App m-5 text-center">
+      <div className="content border rounded shadow-sm p-4">
         <Search
           handleQuery={handleQuery}
           handleSearch={handleSearch}
@@ -87,6 +87,12 @@ function App() {
           isForecastLoaded={isForecastLoaded}
           forecastData={forecastData}
         />
+      </div>
+      <div className="footer">
+        coded by <a href="https://cool-starship-bcbb97.netlify.app/">Ro?a </a>-{" "}
+        <a href="https://github.com/Rojahm/weather-app-again">
+          open-source on Github
+        </a>
       </div>
     </div>
   );

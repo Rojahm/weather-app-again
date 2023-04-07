@@ -1,0 +1,8 @@
+.App .footer,
+a {
+  font-size: 10px;
+  font-weight: 500;
+}
+.App .footer a {
+  text-decoration: none;
+}
