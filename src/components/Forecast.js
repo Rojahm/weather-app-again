@@ -18,13 +18,17 @@ const Forecast = ({
   } else if (isForecastLoaded) {
     return (
       <div className="d-flex justify-content-evenly">
-        {forecastData.daily.map((day) => (
-          <ForecastDay
-            key={Math.floor(Math.random() * 10000) + 1}
-            day={day}
-            unit={unit}
-          />
-        ))}
+        {forecastData.daily.map(
+          (day, i) =>
+            i < 6 &&
+            i > 0 && (
+              <ForecastDay
+                key={Math.floor(Math.random() * 10000) + 1}
+                day={day}
+                unit={unit}
+              />
+            )
+        )}
       </div>
     );
   }
