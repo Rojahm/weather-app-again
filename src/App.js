@@ -23,9 +23,12 @@ function App() {
       setWeatherData(Response.data);
       setIsLoading(false);
       setIsLoaded(true);
-      console.log(weatherData);
     });
   };
+  // default first page when nothing is loaded or no search as been done
+  if (!isLoaded && !isLoading) {
+    getData("berlin");
+  }
   // handle input text and setCity
   const handleQuery = (e) => {
     setCity(e.target.value);
@@ -53,9 +56,12 @@ function App() {
       setForecastData(Response.data);
       setIsForecastLoading(false);
       setIsForecastLoaded(true);
-      console.log(forecastData);
     });
   };
+  // default first page forecast values when nothing is loaded or no search as been done
+  if (!isForecastLoaded && !isForecastLoading) {
+    getForecast("berlin");
+  }
   return (
     <div className="App border rounded shadow-sm p-5 m-5 text-center">
       <header className="App-header"></header>
