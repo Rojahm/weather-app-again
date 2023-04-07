@@ -1,9 +1,11 @@
 import Time from "./Time";
+import Icon from "./Icon";
 
 const ForecastDay = ({ day, unit }) => {
   return (
     <div>
       <Time timeStamp={day.time} time={false} />
+      <Icon />
       <span>
         {unit === "metric"
           ? Math.round(day.temperature.maximum)
