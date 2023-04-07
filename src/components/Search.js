@@ -2,7 +2,7 @@ import { FaSearchLocation } from "react-icons/fa";
 const Search = ({ handleQuery, handleSearch, handleCurrentLocation }) => {
   return (
     <div className="Search">
-      <form className="input-group mt-5 px-5" onSubmit={handleSearch}>
+      <form className="input-group mt-4 px-5" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Type a City"
